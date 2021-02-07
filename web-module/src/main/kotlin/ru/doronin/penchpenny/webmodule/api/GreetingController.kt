@@ -17,5 +17,5 @@ class GreetingController(val mapper: ObjectMapper) {
      */
     @GetMapping(path = ["/", "/{name}"])
     fun greetPerson(@PathVariable("name", required = false) name: String?): Mono<JsonNode> =
-        Mono.just(mapper.valueToTree(mapOf("response" to "Hello, ${name?:"Anonymous"}!")))
+        Mono.just(mapper.valueToTree(mapOf("response" to "Hello, ${name?:"Anonymous"} from brand new version!")))
 }
